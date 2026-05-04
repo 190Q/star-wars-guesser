@@ -1,0 +1,5 @@
+.env
+frames_cache/
+frames/
+__pycache__/
+*.pyc

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Wars Frame Guesser</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div class="scanlines"></div>
+    <div class="noise"></div>
+
+    <header>
+        <div class="header-inner">
+            <div class="logo-block">
+                <span class="logo-star">STAR</span>
+                <span class="logo-wars">WARS</span>
+            </div>
+            <div class="subtitle">FRAME IDENTIFICATION TERMINAL</div>
+        </div>
+        <div class="header-line"></div>
+    </header>
+
+    <main>
+        <section class="score-bar">
+            <div class="score-item">
+                <span class="score-label">CORRECT</span>
+                <span class="score-value" id="score-correct">0</span>
+            </div>
+            <div class="score-divider">|</div>
+            <div class="score-item">
+                <span class="score-label">TOTAL</span>
+                <span class="score-value" id="score-total">0</span>
+            </div>
+            <div class="score-divider">|</div>
+            <div class="score-item">
+                <span class="score-label">ACCURACY</span>
+                <span class="score-value" id="score-accuracy">-</span>
+            </div>
+            <div class="score-divider">|</div>
+            <div class="score-item">
+                <span class="score-label">STREAK</span>
+                <span class="score-value streak-value" id="score-streak">0</span>
+            </div>
+        </section>
+
+        <section class="lifetime-bar">
+            <span class="lifetime-heading">LIFETIME</span>
+            <div class="lifetime-stat">
+                <span class="lifetime-label">CORRECT</span>
+                <span class="lifetime-value" id="lt-correct">0</span>
+            </div>
+            <div class="lifetime-stat">
+                <span class="lifetime-label">TOTAL</span>
+                <span class="lifetime-value" id="lt-total">0</span>
+            </div>
+            <div class="lifetime-stat">
+                <span class="lifetime-label">ACCURACY</span>
+                <span class="lifetime-value" id="lt-accuracy">-</span>
+            </div>
+            <div class="lifetime-stat">
+                <span class="lifetime-label">BEST STREAK</span>
+                <span class="lifetime-value" id="lt-best-streak">0</span>
+            </div>
+        </section>
+
+        <section class="frame-arena">
+            <div class="frame-container" id="frame-container">
+                <div class="frame-placeholder" id="frame-placeholder">
+                    <div class="placeholder-inner">
+                        <div class="placeholder-icon">▶</div>
+                        <div class="placeholder-text">AWAITING TRANSMISSION</div>
+                    </div>
+                </div>
+                <img id="frame-img" class="frame-img hidden" alt="Mystery frame" />
+                <div class="frame-overlay-corner tl"></div>
+                <div class="frame-overlay-corner tr"></div>
+                <div class="frame-overlay-corner bl"></div>
+                <div class="frame-overlay-corner br"></div>
+                <div class="result-banner hidden" id="result-banner">
+                    <span id="result-icon"></span>
+                    <span id="result-text"></span>
+                    <span id="result-answer"></span>
+                </div>
+                <div class="frame-progress hidden" id="frame-progress">
+                    <div class="frame-progress-fill" id="frame-progress-fill"></div>
+                    <div class="frame-progress-thumb" id="frame-progress-thumb"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="choices-section" id="choices-section">
+            <div class="choices-label">IDENTIFY THE EPISODE</div>
+            <div class="choices-grid" id="choices-grid">
+            </div>
+        </section>
+
+        <section class="controls">
+            <button class="btn-next" id="btn-next" disabled>
+                <span class="btn-inner">
+                    <span class="btn-label">NEXT FRAME</span>
+                    <span class="btn-arrow">→</span>
+                </span>
+            </button>
+        </section>
+
+        <div class="loading-overlay hidden" id="loading-overlay">
+            <div class="loading-inner">
+                <div class="loading-bar-wrap">
+                    <div class="loading-bar" id="loading-bar"></div>
+                </div>
+                <div class="loading-text">EXTRACTING FRAME...</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <span>GALACTIC ARCHIVES - CLASSIFIED</span>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
