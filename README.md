@@ -58,7 +58,7 @@ The scanner uses a regex match on the folder name, so the naming convention must
 2. **Install Python dependencies**
 
     ```bash
-    pip install flask flask-cors python-dotenv
+    pip install requirements.txt
     ```
 
 3. **Configure environment variables**
